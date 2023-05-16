@@ -1,0 +1,4 @@
+{
+  "animal_type": "cat",
+  "image_path": "s3://S3_BUCKET/testing/cat.jpg"
+}

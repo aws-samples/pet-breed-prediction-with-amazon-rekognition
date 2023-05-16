@@ -1,0 +1,19 @@
+## Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+## SPDX-License-Identifier: MIT-0
+version: 0.2
+
+
+phases:
+  install:
+    runtime-versions:
+      python: 3.9
+  build:
+    commands:
+      - echo Creating manifest
+      - pip install -r requirements-manifest.txt
+      - bash rekognition/scripts/download_data.sh
+      - bash rekognition/scripts/upload_data_to_s3.sh
+      - python rekognition/scripts/create_oxford_pets_manifest.py
+      - aws s3 cp oxford-pets.manifest s3://${S3_BUCKET}/${VERSION}/${ANIMAL}/${UUID}/${ANIMAL}.manifest
+      - mv oxford-pets.manifest ${ANIMAL}.manifest
+      - python rekognition/scripts/split_manifest.py
