@@ -1,0 +1,15 @@
+## Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+## SPDX-License-Identifier: MIT-0
+version: 0.2
+
+
+phases:
+  install:
+    runtime-versions:
+      python: 3.9
+  build:
+    commands:
+      - echo Evaluating ${MODEL_NAME} model
+      - pip install -r requirements-manifest.txt
+      - python rekognition/scripts/create_evaluation_metrics.py
+      - aws s3 cp classification_metrics.json s3://${S3_BUCKET}/${VERSION}/${ANIMAL}/${UUID}/evaluation/classification_metrics.json

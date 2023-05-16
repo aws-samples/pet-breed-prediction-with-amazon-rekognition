@@ -1,0 +1,9 @@
+boto3==1.20.7
+numpy==1.22.2
+pandas==1.4.1
+pyarrow==7.0.0
+s3fs==2022.2.0
+smart_open==5.2.1
+scikit-learn==1.0.2
+python-magic==0.4.25
+Pillow==9.0.1

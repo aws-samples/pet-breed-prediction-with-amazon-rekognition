@@ -1,0 +1,20 @@
+## Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+## SPDX-License-Identifier: MIT-0
+
+# minimal accuracy thesholds required for model promotion
+dogAccuracy: 0.20
+catAccuracy: 0.0
+
+minInferenceUnits: 1
+maxInferenceUnits: 2
+minConfidence: 5
+
+catModelArn: /animal-rekognition/cat/model/model-arn
+dogModelArn: /animal-rekognition/dog/model/model-arn
+
+# pet attributes, defined in dynamo table, could be things like friendliness, level of barking, etc...
+attributesToSend:
+ - 'attribute_1'
+ - 'attribute_2'
+ - 'attribute_3'
+
