@@ -1,10 +1,10 @@
 
-# Breed Rekognition
+# Pet Breed Prediction with Amazon Rekognition
 
-This repository is used to store the relevant code for breed rekognition solution. This solution utilizes The Oxford-IIIT Pet Dataset to create two Amazon Rekognition Custom Labels models, one for dogs and one for cats. The lambda returns the breeds predicted by the models with an accuracy score. The lambda also returns attributes associated with the breed with the confidence prediction that is looked up from a Amazon DynamoDB table. The breed attributes are integers for demonstration purposes but could represent characteristics like 'activity level'.
+This repository is used to store the relevant code for pet breed prediction with Amazon Rekognition solution. This solution utilizes The Oxford-IIIT Pet Dataset to create two Amazon Rekognition Custom Labels models, one for dogs and one for cats. The AWS Lambda returns the breeds predicted by the models with an accuracy score. The Lambda also returns attributes associated with the breed with the confidence prediction that is looked up from a Amazon DynamoDB table. The breed attributes are integers for demonstration purposes but could represent characteristics like 'activity level'.
 
 ![Architecture](./images/Architecture.drawio.png "Architecture")
-This sample code creates a AWS Step Functions workflow to manage the creation and promotion of the Amazon Rekognition Models and a lambda to interact with the Models and give predictions.
+This sample code creates a AWS Step Functions workflow to manage the creation and promotion of the Amazon Rekognition Models and a Lambda to interact with the Models and give predictions.
 
 ![State Machine](./images/stepfunctions.png "AWS Step Functions workflow")
 
