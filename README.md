@@ -56,7 +56,7 @@ To deploy execute the following:
 ```
 ./deploy.sh
 ```
-This will install the required python dependencies. After installing dependencies it it will run ```cdk deploy``` to create the infrastructure. After the Cloudformation stack has been created successfully the script uploads necessary data to s3 and triggers execution of the Step Functions workflow to create both models for cats and dogs.
+This will install the required python dependencies. After installing dependencies it will run ```cdk deploy``` to create the infrastructure. After the Cloudformation stack has been created successfully the script uploads necessary data to s3 and triggers execution of the Step Functions workflow to create both models for cats and dogs.
 
 The initial model training and Step Functions workflow can take around 2.5 hours. You can subscribe to the Amazon Simple Notification Service (Amazon SNS) topic that the stack creates to be notified when the model has been deployed. Once the model is deployed you can then run the integration tests by executing `./integration_test.sh` to validate that the stack and models are working as expected. Prior to running the script, download a cat and dog image and add them to `/tests/data` folder titled `cat.jpg` and `dog.jpg`. After you are finished testing this solution, make sure to stop the Rekognition Models and delete any unneeded resources to avoid unnecessary charges. See [Teardown](#teardown) section for additional details.
 
